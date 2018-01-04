@@ -1,0 +1,62 @@
+{
+  "name": "error-request-default",
+  "version": "4.0.0",
+  "description": "Manage error default errors",
+  "main": "index.js",
+  "scripts": {
+    "debugTest": "node --inspect-brk node_modules/.bin/jest",
+    "test": "jest",
+    "watch:test": "npm run test -- --watch",
+    "cover": "npm run test -- --coverage",
+    "lint": "eslint lib",
+    "lint-test-staged": "lint-staged"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add",
+      "jest --bail --findRelatedTests"
+    ]
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "mockData.js$",
+      ".eslintrc.js$"
+    ],
+    "collectCoverageFrom": [
+      "lib/**/*.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 50,
+        "functions": 50,
+        "lines": 50
+      }
+    },
+    "setupTestFrameworkScriptFile": "./testSetup.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.corp.ebay.com/nodejs/error-request-default.git"
+  },
+  "pre-commit": [
+    "lint-test-staged"
+  ],
+  "author": "ccinelli@ebay.com",
+  "dependencies": {
+    "logging-inc": "^4",
+    "trycatch": "1.5.21"
+  },
+  "devDependencies": {
+    "eslint": "4.14.0",
+    "lint-staged": "3.4.0",
+    "eslint-config-ebay": "0.1.9",
+    "jest": "22.0.4",
+    "lint-staged": "^3.4.0",
+    "pre-commit": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=4"
+  }
+}
