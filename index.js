@@ -1,1 +1,2 @@
-module.exports = require('.lib/middleware');
+import middleware from './lib/middleware';
+export default middleware;

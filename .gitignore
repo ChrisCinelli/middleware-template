@@ -4,6 +4,8 @@
 # build directories
 .marko-migrate-backup
 .coverage
+coverage
+dist
 .test
 *.log
 *.marko.js

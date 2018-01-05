@@ -16,8 +16,14 @@
     "test": "jest",
     "watch:test": "npm run test -- --watch",
     "cover": "npm run test -- --coverage",
+    "coverHTML": "npm run cover && open ./coverage/lcov-report/index.html",
     "lint": "eslint lib",
-    "lint-test-staged": "lint-staged"
+    "lint-test-staged": "lint-staged",
+    "clean": "rm -rf dist && mkdir dist",
+    "rollup": "./node_modules/.bin/rollup -c",
+    "build-lib": "babel -d ./dist ./index.js -s",
+    "build": "npm run clean && npm run rollup",
+    "prepublish": "npm run lint && npm run cover && npm run build"
   },
   "lint-staged": {
     "*.js": [
@@ -57,7 +63,9 @@
     "trycatch": "1.5.21"
   },
   "devDependencies": {
+    "babel-plugin-external-helpers": "6.22.0",
     "babel-preset-env": "1.6.1",
+    "babelrc-rollup": "3.0.0",
     "eslint": "4.14.0",
     "eslint-config-ebay": "0.1.9",
     "express": "4.16.2",
@@ -65,7 +73,9 @@
     "jest": "22.0.4",
     "jest-extended": "0.5.0",
     "lint-staged": "^3.4.0",
-    "pre-commit": "^1.2.2"
+    "pre-commit": "^1.2.2",
+    "rollup": "0.53.3",
+    "rollup-plugin-babel": "3.0.3"
   },
   "publishConfig": {
     "registry": "http://npm.corp.ebay.com"
