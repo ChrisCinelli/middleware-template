@@ -6,5 +6,8 @@ module.exports = {
   },
   "extends": [ "ebay" ],
   "rules": {
+  },
+  "parserOptions": {
+      "sourceType": "module"
   }
 }

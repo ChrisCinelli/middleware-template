@@ -2,6 +2,14 @@
   "name": "error-request-default",
   "version": "4.0.0",
   "description": "Manage error default errors",
+  "author": "ccinelli@ebay.com",
+  "keywords": [
+    "error",
+    "long stack trace",
+    "devtool",
+    "ebay",
+    "nodejs"
+  ],
   "main": "index.js",
   "scripts": {
     "debugTest": "node --inspect-brk node_modules/.bin/jest",
@@ -43,20 +51,23 @@
   "pre-commit": [
     "lint-test-staged"
   ],
-  "author": "ccinelli@ebay.com",
   "dependencies": {
+    "connect-timeout": "1.9.0",
     "logging-inc": "^4",
     "trycatch": "1.5.21"
   },
   "devDependencies": {
+    "babel-preset-env": "1.6.1",
     "eslint": "4.14.0",
-    "lint-staged": "3.4.0",
     "eslint-config-ebay": "0.1.9",
+    "express": "4.16.2",
+    "express-unit": "2.0.1",
     "jest": "22.0.4",
+    "jest-extended": "0.5.0",
     "lint-staged": "^3.4.0",
     "pre-commit": "^1.2.2"
   },
-  "engines": {
-    "node": ">=4"
+  "publishConfig": {
+    "registry": "http://npm.corp.ebay.com"
   }
 }
