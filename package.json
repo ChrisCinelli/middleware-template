@@ -1,16 +1,12 @@
 {
-  "name": "error-request-default",
-  "version": "4.0.0",
-  "description": "Manage error default errors",
-  "author": "ccinelli@ebay.com",
+  "name": "middleware-template",
+  "version": "1.0.0",
+  "description": "My middleware",
   "keywords": [
-    "error",
-    "long stack trace",
-    "devtool",
-    "ebay",
+    "middleware",
     "nodejs"
   ],
-  "main": "index.js",
+  "main": "./dist/index.js",
   "scripts": {
     "debugTest": "node --inspect-brk node_modules/.bin/jest",
     "test": "jest",
@@ -52,15 +48,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.corp.ebay.com/nodejs/error-request-default.git"
+    "url": "https://github.com/chriscinelli/middleware-template.git"
   },
   "pre-commit": [
     "lint-test-staged"
   ],
   "dependencies": {
-    "connect-timeout": "1.9.0",
-    "logging-inc": "^4",
-    "trycatch": "1.5.21"
+    "connect-timeout": "1.9.0"
   },
   "devDependencies": {
     "babel-plugin-external-helpers": "6.22.0",
@@ -76,8 +70,5 @@
     "pre-commit": "^1.2.2",
     "rollup": "0.53.3",
     "rollup-plugin-babel": "3.0.3"
-  },
-  "publishConfig": {
-    "registry": "http://npm.corp.ebay.com"
   }
 }
